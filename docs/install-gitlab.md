@@ -30,6 +30,10 @@ mega-linter:
     paths:
       - megalinter-reports
     expire_in: 1 week
+  cache:
+    key: $CI_COMMIT_REF_SLUG
+    paths:
+      - ".lycheecache"
 ```
 
 Create a Gitlab access token and define it in a variable **GITLAB_ACCESS_TOKEN_MEGALINTER** in the project CI/CD masked variables. Make sure your token (e.g. if a project token) as the appropriate [role](https://docs.gitlab.com/ee/user/permissions.html) for commenting a merge request (at least developer).
